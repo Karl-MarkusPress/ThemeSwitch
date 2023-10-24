@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Veebileht</title>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        
+        .dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white">
+    <div class="container mt-5">
+        <h1>Suvaline tekst</h1>
+        <button id="themeToggle" class="btn btn-dark">Muuda teemat</button>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        const themeToggleBtn = document.getElementById("themeToggle");
+        const body = document.body;
+
+        themeToggleBtn.addEventListener("click", function () {
+            
+            if (body.classList.contains("bg-dark")) {
+                
+                body.classList.remove("bg-dark");
+                body.classList.remove("text-white");
+                
+                themeToggleBtn.textContent = "Tume teema";
+                themeToggleBtn.classList.replace("btn-light", "btn-dark");
+            } else {
+                
+                body.classList.add("bg-dark");
+                body.classList.add("text-white");
+                
+                themeToggleBtn.textContent = "Hele teema";
+                themeToggleBtn.classList.replace("btn-dark", "btn-light");
+            }
+        });
+    </script>
+</body>
+</html>
